@@ -17,4 +17,5 @@ export default function RootLayout({
       <body className={type_second.variable}>{children}</body>
     </html>
   );
+
 }
