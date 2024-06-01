@@ -1,14 +1,23 @@
 import type { Metadata } from "next"
+import ResetPasswordForm from "../components/reset-password-form"
 
 export const metadata: Metadata = {
   title: "Reset password | Dogs",
   description: 'Reset your password.'
 }
 
-export default async function ResetPasswordPage() {
+type ResetSearchParams = {
+  searchParams: {
+    key: string;
+    login: string
+  }
+}
+
+export default async function ResetPasswordPage({ searchParams }: ResetSearchParams) {
   return (
-  <main>
-    <h1>ResetPasswordPage</h1>
-  </main>
+    <div className="animeLeft">
+      <h1 className="title">Reset Password</h1>
+      <ResetPasswordForm keyToken={searchParams.key} login={searchParams.login} />
+    </div>
   )
 }

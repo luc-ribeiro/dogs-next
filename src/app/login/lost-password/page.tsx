@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import LostPasswordForm from "../components/lost-password-form"
 
 export const metadata: Metadata = {
   title: "Forgot password | Dogs",
@@ -7,8 +8,9 @@ export const metadata: Metadata = {
 
 export default async function LostPasswordPage() {
   return (
-  <main>
-    <h1>LostPasswordPage</h1>
-  </main>
+    <div className="animeLeft">
+      <h1 className="title">Lost Password?</h1>
+      <LostPasswordForm />
+    </div>
   )
 }
