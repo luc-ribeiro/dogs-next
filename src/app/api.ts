@@ -1,9 +1,15 @@
 // @ts-nocheck
 export const API_URL = 'https://dogsapi.origamid.dev/json';
 
-export function TOKEN_POST() {
+export function LOGIN() {
   return {
     url: API_URL + '/jwt-auth/v1/token',
+  };
+}
+
+export function SIGNUP() {
+  return {
+    url: API_URL + '/api/user',
   };
 }
 
@@ -31,18 +37,6 @@ export function USER_GET(token) {
   };
 }
 
-export function USER_POST(body) {
-  return {
-    url: API_URL + '/api/user',
-    options: {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    },
-  };
-}
 
 export function PHOTO_POST(formData, token) {
   return {

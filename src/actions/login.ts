@@ -1,13 +1,13 @@
 'use server'
 
-import { TOKEN_POST } from "@/app/api";
+import { LOGIN } from "@/app/api";
 import apiError from "@/functions/api-error";
 import { cookies } from "next/headers";
 
 interface StateType {
   ok: boolean
   error: string
-  data: null
+  data?: null
 }
 
 export default async function login(state: StateType, formData: FormData) {
@@ -19,7 +19,7 @@ export default async function login(state: StateType, formData: FormData) {
       throw new Error('Username and password are required')
     }
 
-    const { url } = TOKEN_POST()
+    const { url } = LOGIN()
     const response = await fetch(url, {
       method: 'POST',
       body: formData,

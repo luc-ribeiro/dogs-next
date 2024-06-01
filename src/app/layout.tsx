@@ -6,7 +6,7 @@ import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Dogs Next",
-  description: "Rede social para cachorros.",
+  description: "Social network for dogs.",
 };
 
 export default function RootLayout({
