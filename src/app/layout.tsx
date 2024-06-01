@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { type_second } from "@/functions/fonts";
-import Header from "@/components/Header/header";
-import Footer from "@/components/Footer/footer";
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Dogs Next",

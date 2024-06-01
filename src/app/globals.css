@@ -27,6 +27,8 @@ li {
 }
 
 img {
+  height: auto;
+  width: auto;
   display: block;
   max-width: 100%;
 }
