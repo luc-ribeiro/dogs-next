@@ -13,7 +13,7 @@ export default async function Header() {
         </Link>
         {
           user ? (
-            <Link className={styles.login} href={'/conta'}>Dogs</Link>
+            <Link className={styles.login} href={'/profile'}>Dogs</Link>
           ) : (
             <Link className={styles.login} href={'/login'}>Login / Sign Up</Link>
           )
