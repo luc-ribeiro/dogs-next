@@ -35,7 +35,7 @@ export default function PhotoCommentsForm({ single, id, setComments }: PropTypes
       setComments((comments) => [...comments, state.data])
       setComment('')
     }
-  }, [state])
+  }, [state, setComments])
 
   return (
     <form className={`${styles.form} ${single ? styles.single : ''}`} action={action}>
