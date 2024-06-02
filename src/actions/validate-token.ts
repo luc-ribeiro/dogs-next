@@ -1,16 +1,10 @@
 'use server'
 
-import { STATS_GET } from "@/app/api"
+import { TOKEN_VALIDATE_POST } from "@/app/api"
 import apiError from "@/functions/api-error"
 import { cookies } from "next/headers"
 
-export type StatsData = {
-  id: number;
-  title: string;
-  acessos: string;
-}
-
-export default async function statsGet() {
+export default async function validateToken() {
   try {
     const token = cookies().get('token')?.value
 
@@ -18,19 +12,17 @@ export default async function statsGet() {
       throw new Error ('Unauthorized.')
     }
 
-    const { url } = STATS_GET()
+    const { url } = TOKEN_VALIDATE_POST()
     const response = await fetch(url,{
+      method: 'POST',
       headers: {
         Authorization: 'Bearer ' + token,
-      },
-      next: {
-        revalidate: 60,
       }
     },)
 
-    if (!response.ok) throw new Error('Error on fetching stats.')
+    if (!response.ok) throw new Error('Error on validate token.')
 
-    const data = await response.json() as StatsData[]
+    const data = await response.json()
 
     return { data, ok: true, error: '' }
   } catch (error) {
