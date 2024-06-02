@@ -31,6 +31,12 @@ export function USER_GET() {
   };
 }
 
+export function PHOTO_POST() {
+  return {
+    url: API_URL + '/api/photo',
+  }
+}
+
 export function TOKEN_VALIDATE_POST(token) {
   return {
     url: API_URL + '/jwt-auth/v1/token/validate',
@@ -39,22 +45,6 @@ export function TOKEN_VALIDATE_POST(token) {
       headers: {
         Authorization: 'Bearer ' + token,
       },
-    },
-  };
-}
-
-
-
-
-export function PHOTO_POST(formData, token) {
-  return {
-    url: API_URL + '/api/photo',
-    options: {
-      method: 'POST',
-      headers: {
-        Authorization: 'Bearer ' + token,
-      },
-      body: formData,
     },
   };
 }

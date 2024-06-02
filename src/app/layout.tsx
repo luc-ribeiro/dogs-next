@@ -19,7 +19,7 @@ export default async function RootLayout({
   const { data: user } = await userGet()
 
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body className={type_second.variable}>
         <UserContextProvider user={user}>
           <div className="App">
