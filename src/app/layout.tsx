@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+
 import { type_second } from "@/functions/fonts";
+
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+
 import { UserContextProvider } from "@/context/user-context";
+
 import userGet from "@/actions/user-get";
 
 export const metadata: Metadata = {
@@ -13,8 +17,10 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
+  modal
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   const { data: user } = await userGet()
 
@@ -28,6 +34,10 @@ export default async function RootLayout({
             <main className="AppBody">
               {children}
             </main>
+
+            <div>
+              {modal}
+            </div>
 
             <Footer />
           </div>
