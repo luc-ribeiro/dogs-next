@@ -7,12 +7,15 @@ import Link from 'next/link';
 
 import styles from './account-header.module.css';
 
+import logout from '@/actions/logout';
+
 import useMedia from '@/hooks/use-media';
 
 import FeedIcon from '@/components/icons/feed-icon';
 import StatisticsIcon from '@/components/icons/statistics-icon';
 import AddIcon from '@/components/icons/add-icon';
 import LogoutIcon from '@/components/icons/logout-icon';
+import { useUser } from '@/context/user-context';
 
 function getTitle(pathname: string) {
   switch (pathname) {
@@ -34,8 +37,10 @@ export default function AccountHeader () {
     setMobileMenu(false);
   }, [pathname]);
 
-  function handleLogout() {
-    // userLogout();
+  const { setUser } = useUser()
+  async function handleLogout() {
+    await logout()
+    setUser(null)
   }
 
   return (
