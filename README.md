@@ -3,7 +3,7 @@
 </h1>
 
 <div align="right">
-  Click <a href="https://github.com/luc-ribeiro/dogs-next/blob/main/README-PTBR.md">here</a> to view the Portuguese version.
+  Clique <a href="https://github.com/luc-ribeiro/dogs-next/blob/main/README-PTBR.md">aqui</a> para ver a versão em Português.
 </div>
 
 <div align="center">
