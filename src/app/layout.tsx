@@ -3,8 +3,8 @@ import "./globals.css";
 
 import { type_second } from "@/functions/fonts";
 
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
 
 import { UserContextProvider } from "@/context/user-context";
 
