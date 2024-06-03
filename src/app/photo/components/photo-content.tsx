@@ -24,12 +24,12 @@ export default function PhotoContent({ data, single }: { data: PhotoData, single
             {user && user.username === photo.author ? (
               <PhotoDelete id={String(photo.id)} />
             ) : (
-              <Link href={`/perfil/${photo.author}`}>@{photo.author}</Link>
+              <Link href={`/profile/${photo.author}`}>@{photo.author}</Link>
             )}
             <span className={styles.views}>{photo.acessos}</span>
           </p>
           <h1 className="title">
-            <Link href={`/foto/${photo.id}`}>{photo.title}</Link>
+            <Link href={`/photo/${photo.id}`}>{photo.title}</Link>
           </h1>
           <ul className={styles.attributes}>
             <li>{photo.peso} kg</li>

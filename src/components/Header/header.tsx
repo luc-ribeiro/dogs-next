@@ -14,7 +14,7 @@ export default async function Header() {
         </Link>
         {
           data ? (
-            <Link className={styles.login} href={'/profile'}>{data.username}</Link>
+            <Link className={styles.login} href={'/account'}>{data.username}</Link>
           ) : (
             <Link className={styles.login} href={'/login'}>Login / Sign Up</Link>
           )
